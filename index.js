@@ -16,12 +16,22 @@ The function should:
   1. Receive values for the object that will be created
   2. Create and return an object using the received values  
 */
+// let copyMenu = {...obj};
+// let copyMenu = {};
 
 function createMenuItem(name, price, category) {
-  return { name, price, category };
+  let copyMenu = {};
+
+  copyMenu.name = name;
+  copyMenu.price = price;
+  copyMenu.category = category;
+  // return latte{ name, price, category };
+  // return breakfastBurrito{name, price, category};
+  return copyMenu;
 }
 
-console.log(createMenuItem);
+// createMenuItem(breakfastBurrito{name});
+// console.log(createMenuItem);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Test your createMenuItems function by doing the following:
@@ -161,13 +171,19 @@ Use the getReviewByIndex function below to do the following:
   1. Receive two arguements: the array that holds all the reviews and an index position of the review to display
   2. The function should return the following string: "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
-*/
+// */
 
-function getReviewByIndex(arr, index) {
-  `${arr[index].name} gave the restaurant a ${arr[index]} star review and their feedback was: ${arr[index]}`;
+function getReviewByIndex(arr, i) {
+  return `${arr[i].name} gave the restaurant a ${arr[i].rating} star review, and their feedback was: ${arr[i].feedback}`;
 }
+console.log(getReviewByIndex(reviews, 1));
 
-console.log(reviews[0].feedback);
+// function getReviewByIndex(arr, index) {
+//   `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was: ${arr[index].feedback}`;
+// }
+
+// // console.log(reviews[0].feedback);
+// console.log(getReviewByIndex(reviews, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -179,9 +195,13 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review and, their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  let reviewList = array[array.length - 1];
+
+  return `${reviewList.name} gave the restaurant a ${reviewList.rating} star review, and their feedback was: ${reviewList.feedback}`;
 }
+
+console.log(getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
@@ -199,9 +219,42 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
-function getReviewByRating(/* code here */) {
-  /* code here */
+let ratings = [];
+function getReviewsByRating(array) {
+  for (i in array.length) {
+    let i = array[i];
+    if (array[i].rating >= 4) {
+      ratings.push(array);
+    }
+  }
+  return getReviewsByRating(array);
 }
+
+console.log(getReviewsByRating(reviews));
+
+// let ratings = [];
+// function getReviewsByRating(array, rating) {
+//   for (i in array) {
+//     if (array[i].rating >= 4) {
+//       ratings.push(array[i].ratings);
+//     }
+//   }
+// }
+// function getReviewByRating(array, rating) {
+//   let fourStars = [];
+
+//   for (let i = 0; i < array.length; i++) {
+//     // for (i in reviews) {
+//     if (reviews.rating > 4) {
+//       fourStars.push(array);
+//     }
+//   }
+//   return fourStars;
+// }
+
+// // getReviewByRating(reviews, 4);
+
+// console.log(getReviewByRating(reviews, 4));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
