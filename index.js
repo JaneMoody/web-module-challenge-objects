@@ -128,19 +128,36 @@ Using the reviews array above do the following:
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-function addSomething(name, rating, feedback) {
-  name.push({ name, rating, feedback });
-  return name;
-}
+// function addSomething(name, rating, feedback) {
+//   reviews.push(name, rating, feedback);
+//   return reviews;
+// }
 
-console.log(
-  addSomething(
-    reviews,
-    "Sofia",
-    4,
-    "Love this place, but food could be better!"
-  )
-);
+// // console.log(addSomething(name="name: "Sofia", rating="rating: 4", feedback= "feedback: Great place."));
+// console.log(
+//   addSomething(
+//     (name = "name: sofia"),
+//     (rating = "rating: 4"),
+//     (feedback = "feedback: I love this place.")
+//   )
+// );
+
+// // EXAMPLE:
+// const user = {
+//      name: 'Megan',
+//      username: 'megs56',
+//      password: 'bubbles'
+//   }
+
+//   user.lovesJavaScript = true;
+
+//   console.log(user);
+
+(reviews.name = "Sofia"),
+  (reviews.rating = 4),
+  (reviews.feedback = "Great place.");
+
+console.log(reviews);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following:
@@ -218,18 +235,18 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
-let ratings = [];
-function getReviewsByRating(array) {
-  for (i in array.length) {
-    let i = array[i];
-    if (array[i].rating >= 4) {
-      ratings.push(array);
-    }
-  }
-  return getReviewsByRating(array);
-}
+// let ratings = [];
+// function getReviewsByRating(array) {
+//   for (i in array.length) {
+//     let i = array[i];
+//     if (array[i].rating >= 4) {
+//       ratings.push(array);
+//     }
+//   }
+//   return getReviewsByRating(array);
+// }
 
-console.log(getReviewsByRating(reviews));
+// console.log(getReviewsByRating(reviews));
 
 // let ratings = [];
 // function getReviewsByRating(array, rating) {
