@@ -66,9 +66,8 @@ export const burger = {
   discount: function (person) {
     if (person === "teacher" || person === "student") {
       return this.price * 0.75;
-    } else if (person === "public") {
-      return this.price * 0.9;
-    }
+    } else person === "public";
+    return this.price * 0.9;
   },
 };
 
